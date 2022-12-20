@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:14.5
+    ports: 
+      - "45432:5432"
+    environment:
+      - POSTGRES_USER=modesti
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=modesti
