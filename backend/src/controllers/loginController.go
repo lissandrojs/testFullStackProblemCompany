@@ -33,7 +33,7 @@ func PostLoginSellerController(ctx *gin.Context) {
 	tokenJwt, err := services.NewJwtAutentication().GenarateToken(uint(seller.Id))
 
 	if err != nil {
-		ctx.JSON(500, gin.H{
+		ctx.JSON(400, gin.H{
 			"error": "Invalid user or password",
 		})
 		return
