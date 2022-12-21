@@ -19,3 +19,19 @@ func PostUsersController(ctx *gin.Context) {
 	config.DB.Create(&user)
 	ctx.JSON(201, user)
 }
+
+func DeleteusersController(ctx *gin.Context) {
+	var users models.User
+
+	config.DB.Where("id =?", ctx.Param("id")).Delete(&users)
+	ctx.JSON(200, &users)
+}
+
+func UpdateusersController(ctx *gin.Context) {
+
+	var users models.User
+	config.DB.Where("id=?", ctx.Param("id")).First(&users)
+	ctx.BindJSON(&users)
+	config.DB.Save(&users)
+	ctx.JSON(200, &users)
+}
