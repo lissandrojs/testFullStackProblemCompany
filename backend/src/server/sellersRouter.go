@@ -10,4 +10,5 @@ func SellersRouter(router *gin.Engine) {
 	router.POST("/sellers", controllers.PostSellersController)
 	router.DELETE("/sellers/:id", controllers.DeleteSellersController)
 	router.PUT("/sellers/:id", controllers.UpdateSellersController)
+	router.POST("sellers/login", controllers.PostLoginSellerController)
 }

@@ -1,4 +1,4 @@
-package utils
+package services
 
 import (
 	"fmt"
@@ -20,7 +20,7 @@ func NewJwtAutentication() *jwtStruct {
 }
 
 type Claim struct {
-	sum uint `json:"sum"`
+	Sum uint `json:"sum"`
 	jwt.StandardClaims
 }
 
@@ -28,7 +28,7 @@ func (s *jwtStruct) GenarateToken(id uint) (string, error) {
 	claim := &Claim{
 		id,
 		jwt.StandardClaims{
-			ExpiresAt: time.Now().Add(time.Hour * 12).Unix(),
+			ExpiresAt: time.Now().Add(time.Hour * 2).Unix(),
 			Issuer:    s.issure,
 			IssuedAt:  time.Now().Unix(),
 		},
