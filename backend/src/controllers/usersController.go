@@ -20,14 +20,14 @@ func PostUsersController(ctx *gin.Context) {
 	ctx.JSON(201, user)
 }
 
-func DeleteusersController(ctx *gin.Context) {
+func DeleteUsersController(ctx *gin.Context) {
 	var users models.User
 
 	config.DB.Where("id =?", ctx.Param("id")).Delete(&users)
 	ctx.JSON(200, &users)
 }
 
-func UpdateusersController(ctx *gin.Context) {
+func UpdateUsersController(ctx *gin.Context) {
 
 	var users models.User
 	config.DB.Where("id=?", ctx.Param("id")).First(&users)

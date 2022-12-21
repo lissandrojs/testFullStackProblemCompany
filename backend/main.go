@@ -11,6 +11,7 @@ func main() {
 	router := gin.New()
 	routes.UsersRouter((router))
 	routes.ProductsRouter((router))
+	routes.SellersRouter((router))
 	config.Connect()
 	router.Run(":8081")
 }
