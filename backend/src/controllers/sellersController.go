@@ -17,6 +17,8 @@ func PostSellersController(ctx *gin.Context) {
 
 	var sellers models.Seller
 	ctx.BindJSON(&sellers)
+
+	sellers.Password = config.Sha256hash(sellers.Password)
 	config.DB.Create(&sellers)
 	ctx.JSON(201, sellers)
 }

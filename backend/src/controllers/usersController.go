@@ -16,6 +16,9 @@ func GetUsersController(ctx *gin.Context) {
 func PostUsersController(ctx *gin.Context) {
 	var user models.User
 	ctx.BindJSON(&user)
+
+	user.Password = config.Sha256hash(user.Password)
+
 	config.DB.Create(&user)
 	ctx.JSON(201, user)
 }
