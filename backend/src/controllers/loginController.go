@@ -42,3 +42,33 @@ func PostLoginSellerController(ctx *gin.Context) {
 		"token": tokenJwt,
 	})
 }
+
+func PostLoginCustumerController(ctx *gin.Context) {
+
+	var login models.Login
+	ctx.BindJSON(&login)
+
+	var user models.User
+
+	dbError := config.DB.Where("email = ?", login.Email).First(&user).Error
+
+	if dbError != nil {
+		ctx.JSON(400, gin.H{
+			"error": "Invalid user or password",
+		})
+		return
+	}
+
+	if user.Password != config.Sha256hash(login.Password) {
+		ctx.JSON(400, gin.H{
+			"error": "Invalid user or password",
+		})
+		return
+	}
+
+	ctx.JSON(200, gin.H{
+		"email":     login.Email,
+		"firstname": user.FirstName,
+		"lastname":  user.LastName,
+	})
+}
