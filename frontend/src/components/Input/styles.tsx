@@ -38,9 +38,10 @@ export const ContentInput = styled.div<IProps>`
     }
     
     input{
-        height:20px;
+        height:25px;
+        border-radius:5px;
         background: transparent;
-        border: none;
+        border: 1px solid #d6772e;
         align-items: center;
         flex: 1;
         color: var(--grey-0);
