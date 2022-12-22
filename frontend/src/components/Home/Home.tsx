@@ -3,6 +3,8 @@ import  React, { useEffect, useState } from 'react';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import useAPIConsumption from "../../services/api";
 import IProduct  from "../../interfaces/IProducts";
+import { Button } from "@mui/material";
+import { margin } from "@mui/system";
 
  
 
@@ -69,12 +71,14 @@ const HomeComponent = () => {
   }
 },[])
 
-const teste = localStorage.getItem("data")
-console.log(teste)
+const getToken : any= localStorage.getItem("data")
+const valueToken = JSON.parse(getToken)
+const {token} =valueToken
   return (
-    <div style={{ height: 730, width: '100%' }}>
+    <div style={{ height: 830, width: '50%', margin: "0 auto"}}>
+        {token ? <Button variant="contained" style={{margin:"20px 10px"}}> Add New Product</Button> :null}
       <DataGrid
-      style={{display:"flex"}}
+      style={{display:"flex" , height:"700px"}}
         rows={rows}
         columns={columns}
         pageSize={10}
