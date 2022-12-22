@@ -18,15 +18,15 @@ const LoginComponent = () =>{
         resolver: yupResolver(schema)
     });
     return (
-            <Box sx={{ bgcolor: '#cfe8fc', height: '100vh',width: '100%' ,display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column"}} >
+            <Box sx={{ bgcolor: '#cfe8fc', height: '100vh',width: '100%' ,display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column" }} >
                 <Typography sx={{paddingTop:"20px"}} variant="h2">
                     Login
                 </Typography>
-                <Container>
+                <Container style={{border: "1px solid #d6772e"}}>
                     <ContainerForm>
-                        <InputComponent errors={errors.email?.message} register={register} name="email" label="E-Mail" placeholder="Seu E-Mail"/>
-                        <InputComponent errors={errors.password?.message} register={register} name="password"  label="Senha" placeholder="Sua Senha" type ="password" />
-                        <Button >Entrar</Button>
+                        <InputComponent errors={errors.email?.message} register={register} name="email" label="E-Mail" placeholder="Your E-mail"/>
+                        <InputComponent errors={errors.password?.message} register={register} name="password"  label="Senha" placeholder="Your password" type ="password" />
+                        <Button  variant="contained">Logar</Button>
                     </ContainerForm>
                 </Container>
             </Box>

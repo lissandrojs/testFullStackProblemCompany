@@ -48,6 +48,7 @@ export const Form = styled.form`
 export const ContainerForm = styled.div`
 display:flex;
 flex-direction: column;
+
 button{
     margin-bottom: 10px;
     margin-top: 10px;
