@@ -40,9 +40,9 @@ const RegisterUser = () =>{
       const response = await axios.post(routerApiLogin,{email,password,name,lastname})
 
       if(response.data){
-        history("/home")
+        history("/")
      }
-
+     
       return  []
    }
 

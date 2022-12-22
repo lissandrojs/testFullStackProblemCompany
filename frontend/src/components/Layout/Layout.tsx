@@ -5,7 +5,6 @@ import IChildren from "../../interfaces/IChildren";
 
 
 
-
 const Layout = ({children }:IChildren) => {
   return (
     <div >

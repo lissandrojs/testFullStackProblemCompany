@@ -10,6 +10,7 @@ import IFormLogin from "../../interfaces/IFormLogin";
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
 
 const LoginComponent = () =>{
 
@@ -37,7 +38,10 @@ const LoginComponent = () =>{
      if(response.data){
         localStorage.setItem("data", JSON.stringify(response.data))
         history("/home")
+     }else{
+        toast.error("Email ou senha Incorreto")
      }
+     
     console.log(response.data)
       return  []
 
