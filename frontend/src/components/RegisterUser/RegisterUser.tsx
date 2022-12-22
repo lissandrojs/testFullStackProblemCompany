@@ -35,7 +35,7 @@ const RegisterUser = () =>{
 
    const onSubmitForm = async ({email,password,name,lastname}:IFormRegisterSimplesUser)=>{
        
-      const routerApiLogin = typeUser === "Custumer" ? "http://localhost:8081/users/login" : "http://localhost:8081/sellers/login"
+      const routerApiLogin = typeUser === "Custumer" ? "http://localhost:8081/users" : "http://localhost:8081/sellers"
 
       const response = await axios.post(routerApiLogin,{email,password,name,lastname})
 
