@@ -76,9 +76,9 @@ const valueToken = JSON.parse(getToken)
 const {token} =valueToken
   return (
     <div style={{ height: 830, width: '50%', margin: "0 auto"}}>
-        {token ? <Button variant="contained" style={{margin:"20px 10px"}}> Add New Product</Button> :null}
+        {token ? <Button variant="outlined" style={{margin:"20px 10px"}}> Add New Product</Button> :null}
       <DataGrid
-      style={{display:"flex" , height:"700px"}}
+      style={{display:"flex" , height:"700px" ,marginTop:"20px"}}
         rows={rows}
         columns={columns}
         pageSize={10}

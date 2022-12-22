@@ -55,7 +55,7 @@ const RegisterUser = () =>{
             Register User {typeUser === "Custumer" ? "Custumer" : "Seller"}
         </Typography>
         <Container style={{border: "1px solid #d6772e"}}>
-             <Button onClick={()=>handleClickTypeUser(typeUser)}>
+             <Button variant="contained" onClick={()=>handleClickTypeUser(typeUser)}>
                  {typeUser === "Custumer" ? "Custumer" : "Seller"}
             </Button>
             <Form onSubmit={handleSubmit(onSubmitForm)}>
