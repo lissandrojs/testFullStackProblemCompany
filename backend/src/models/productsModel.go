@@ -7,5 +7,5 @@ type Product struct {
 	Id       int    `json:"ID" gorm:"primary_key"`
 	Name     string `json:"name"`
 	Price    string `json:"price"`
-	SellerID uint
+	SellerID int
 }
