@@ -10,4 +10,5 @@ type Seller struct {
 	Email     string `json:"email"`
 	Type      string `json:"type"`
 	Password  string `json:"password"`
+	Product   []Product
 }
