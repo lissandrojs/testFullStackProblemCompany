@@ -68,6 +68,9 @@ const HomeComponent = () => {
     })
   }
 },[])
+
+const teste = localStorage.getItem("data")
+console.log(teste)
   return (
     <div style={{ height: 730, width: '100%' }}>
       <DataGrid
