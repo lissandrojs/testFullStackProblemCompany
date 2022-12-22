@@ -35,7 +35,7 @@ const LoginComponent = () =>{
       const response = await axios.post(routerApiLogin,{email,password})
     
      if(response.data){
-        
+        localStorage.setItem("data", JSON.stringify(response.data))
         history("/home")
      }
 
