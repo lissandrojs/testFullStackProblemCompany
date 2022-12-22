@@ -18,7 +18,11 @@ func PostProductsController(ctx *gin.Context) {
 	var product models.Product
 	ctx.BindJSON(&product)
 	config.DB.Create(&product)
-	ctx.JSON(201, product)
+	ctx.JSON(200, gin.H{
+		"id":    product.ID,
+		"name":  product.Name,
+		"price": product.Price,
+	})
 }
 
 func DeleteProductsController(ctx *gin.Context) {
@@ -34,5 +38,9 @@ func UpdateProductsController(ctx *gin.Context) {
 	config.DB.Where("id=?", ctx.Param("id")).First(&product)
 	ctx.BindJSON(&product)
 	config.DB.Save(&product)
-	ctx.JSON(200, &product)
+	ctx.JSON(200, gin.H{
+		"id":    product.ID,
+		"name":  product.Name,
+		"price": product.Price,
+	})
 }
