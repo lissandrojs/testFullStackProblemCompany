@@ -11,5 +11,5 @@ func SellersRouter(router *gin.Engine) {
 	router.POST("/sellers", controllers.PostSellersController, middlewares.Auth())
 	router.DELETE("/sellers/:id", controllers.DeleteSellersController, middlewares.Auth())
 	router.PUT("/sellers/:id", controllers.UpdateSellersController, middlewares.Auth())
-	router.POST("sellers/login", controllers.PostLoginSellerController)
+	router.POST("/sellers/login", controllers.PostLoginSellerController)
 }

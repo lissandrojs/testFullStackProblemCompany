@@ -20,7 +20,7 @@ func PostUsersController(ctx *gin.Context) {
 	user.Password = config.Sha256hash(user.Password)
 
 	config.DB.Create(&user)
-	ctx.JSON(201, user)
+	ctx.JSON(201, user.Email)
 }
 
 func DeleteUsersController(ctx *gin.Context) {
