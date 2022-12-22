@@ -31,7 +31,7 @@ const LoginComponent = () =>{
 
     const onSubmitForm = async ({email,password}:IFormLogin)=>{
 
-      const routerApiLogin = typeUser === "Seller" ? "http://localhost:8081/sellers/login"  : "http://localhost:8081/users/login"
+      const routerApiLogin = typeUser === "Custumer" ? "http://localhost:8081/users/login" : "http://localhost:8081/sellers/login"
 
       const response = await axios.post(routerApiLogin,{email,password})
     
