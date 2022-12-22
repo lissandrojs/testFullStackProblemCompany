@@ -30,7 +30,7 @@ const LoginComponent = () =>{
 
     const onSubmitForm = async ({email,password}:IFormLogin)=>{
 
-      const routerApiLogin = typeUser === "" ? "http://localhost:8081/sellers/login"  : "http://localhost:8081/users/login"
+      const routerApiLogin = typeUser === "Seller" ? "http://localhost:8081/sellers/login"  : "http://localhost:8081/users/login"
 
       const response = await axios.post(routerApiLogin,{email,password})
     
@@ -38,7 +38,7 @@ const LoginComponent = () =>{
         localStorage.setItem("data", JSON.stringify(response.data))
         history("/home")
      }
-
+    console.log(response.data)
       return  []
 
     }
