@@ -9,6 +9,7 @@ import { useForm } from 'react-hook-form';
 import  * as yup from "yup"
 import InputComponent from "../Input/Input";
 import { ContainerForm, Form } from "../Login/styles";
+import axios from "axios";
 
 
  
@@ -88,9 +89,12 @@ const HomeComponent = () => {
 const getToken : any= localStorage.getItem("data")
 const valueToken = JSON.parse(getToken)
 const {token} =valueToken
-const onSubmitForm = async ({name,price}:IProductAdd)=>{
 
-}
+const onSubmitForm = async ({name,price}:IProductAdd)=>{
+   const request =    axios.post("http://localhost:8081/products",{name,price}, `Bearer ${token}`)
+
+
+  }
 
 
  useEffect(()=>{
